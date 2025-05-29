@@ -14,7 +14,7 @@ export const useDeleteToDo = () => {
    return useMutation<void, Error, number>({
       mutationKey: ['todos', 'delete'],
       mutationFn: deleteToDo,
-      onSuccess: () => queryClient.invalidateQueries({ queryKey: ['todos'] }),
+      onSuccess: (_, toDoId: number) => queryClient.setQueryData(['todos'], (old: IToDoItem[] = []) => old.filter((toDo: IToDoItem) => toDo.id !== toDoId)),
       onError: (e: Error) => console.error(e)
    })
 };

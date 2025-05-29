@@ -20,7 +20,7 @@ const ToDoList: FC = () => {
          <ul className={styles.list}>
             {data?.length && data?.length > 0 &&
                data.map((toDo: IToDoItem) => (
-                  <ToDoItem data={toDo} />
+                  <ToDoItem key={toDo.id} data={toDo} />
                ))
             }
          </ul>
