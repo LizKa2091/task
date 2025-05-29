@@ -11,8 +11,8 @@ const ToDoItem: FC<IToDoItemProps> = ({ data }) => {
    const [isDeleted, setIsDeleted] = useState<boolean>(false);
    const { mutate: deleteToDo } = useDeleteToDo();
 
-   const handleDeleteTask = (id: number) => {
-      deleteToDo(id);
+   const handleDeleteTask = () => {
+      deleteToDo(data.id);
       setIsDeleted(true);
    };
 
@@ -21,10 +21,10 @@ const ToDoItem: FC<IToDoItemProps> = ({ data }) => {
    }
 
    return (
-      <li key={data.id} className={styles.itemContainer}>
+      <li className={styles.itemContainer}>
          <p className={styles.itemTitle}>{data.title}</p>
          <p>статус задачи: {data.completed ? 'выполнена' : 'не выполнена'}</p>
-         <button onClick={() => handleDeleteTask(data.id)}>Удалить задачу</button>
+         <button onClick={handleDeleteTask}>Удалить задачу</button>
       </li>
    )
 }
