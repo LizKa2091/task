@@ -1,0 +1,10 @@
+.item {
+   &Container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+   }
+   &Title {
+      font-size: 1.25rem;
+   }
+}
