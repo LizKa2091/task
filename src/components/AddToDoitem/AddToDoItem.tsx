@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FC, FormEvent, useState } from 'react'
-import { useAddToDo } from '../hooks/useAddToDo';
-import { useSnackbar } from '../context/SnackbarContext';
+import { useAddToDo } from '../../hooks/useAddToDo';
+import { useSnackbar } from '../../context/SnackbarContext';
 import styles from './AddToDoItem.module.scss';
 
 const AddToDoItem: FC = () => {

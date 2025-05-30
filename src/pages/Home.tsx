@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import styles from './Home.module.scss';
 import { useSnackbar } from '../context/SnackbarContext';
-import Snackbar from '../components/Snackbar';
-import AddToDoItem from '../components/AddToDoItem';
-import ToDoList from '../components/ToDoList';
-import Header from '../components/Header';
+import Snackbar from '../components/Snackbar/Snackbar';
+import AddToDoItem from '../components/AddToDoitem/AddToDoItem';
+import ToDoList from '../components/ToDoList/ToDoList';
+import Header from '../components/Header/Header';
 
 const Home: FC = () => {
    const { message, setMessage, messageType } = useSnackbar();

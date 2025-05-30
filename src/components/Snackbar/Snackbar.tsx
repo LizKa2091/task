@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styles from './Snackbar.module.scss';
-import { messageTypes } from '../types';
+import { messageTypes } from '../../types';
 
 interface ISnackbarProps {
    message: string;

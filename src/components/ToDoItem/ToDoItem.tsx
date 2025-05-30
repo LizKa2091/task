@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react';
-import { IToDoItem } from '../types';
+import { IToDoItem } from '../../types';
 import styles from './ToDoItem.module.scss';
-import { useDeleteToDo } from '../hooks/useDeleteToDo';
-import { useSnackbar } from '../context/SnackbarContext';
+import { useDeleteToDo } from '../../hooks/useDeleteToDo';
+import { useSnackbar } from '../../context/SnackbarContext';
 
 interface IToDoItemProps {
    data: IToDoItem;

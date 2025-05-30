@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
 import { useSnackbar } from '../context/SnackbarContext';
-import Snackbar from '../components/Snackbar';
+import Snackbar from '../components/Snackbar/Snackbar';
 
 const NotFound: FC = () => {
    const { message, setMessage, messageType } = useSnackbar();

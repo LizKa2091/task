@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
-import { useToDoItems } from '../hooks/useToDoItems';
-import { IToDoItem } from '../types';
-import ToDoItem from './ToDoItem';
+import { useToDoItems } from '../../hooks/useToDoItems';
+import { IToDoItem } from '../../types';
+import ToDoItem from '../ToDoItem/ToDoItem';
 import styles from './ToDoList.module.scss';
-import { useSnackbar } from '../context/SnackbarContext';
+import { useSnackbar } from '../../context/SnackbarContext';
 
 const ToDoList: FC = () => {
    const { data, isLoading, isError } = useToDoItems();
