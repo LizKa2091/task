@@ -14,6 +14,8 @@ export const useToDoItems = () => {
    return useQuery<IToDoItem[], Error>({
       queryKey: ['todos'],
       queryFn: fetchToDos,
-      retry: 2
+      retry: 2,
+      staleTime: Infinity,
+      refetchOnMount: false
    })
 };
