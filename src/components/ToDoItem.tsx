@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react';
 import { IToDoItem } from '../types';
 import styles from './ToDoItem.module.scss';
 import { useDeleteToDo } from '../hooks/useDeleteToDo';
+import { useSnackbar } from '../context/SnackbarContext';
 
 interface IToDoItemProps {
    data: IToDoItem;
@@ -9,11 +10,22 @@ interface IToDoItemProps {
 
 const ToDoItem: FC<IToDoItemProps> = ({ data }) => {
    const [isDeleted, setIsDeleted] = useState<boolean>(false);
+
    const { mutate: deleteToDo } = useDeleteToDo();
+   const { setMessage, setMessageType } = useSnackbar();
 
    const handleDeleteTask = () => {
-      deleteToDo(data.id);
-      setIsDeleted(true);
+      deleteToDo(data.id, {
+         onSuccess: () => {
+            setMessage('задача успешно удалена');
+            setMessageType('success');
+            setIsDeleted(true);
+         },
+         onError: () => {
+            setMessage('произошла ошибка, задача не была добавлена');
+            setMessageType('error');
+         }
+      });
    };
 
    if (isDeleted) {
