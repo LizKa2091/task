@@ -1,0 +1,32 @@
+.snackbar {
+   &Container {
+      display: flex;
+      align-items: center;
+      border-radius: 12px;
+      font-size: 2rem;
+      gap: 20px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 5px 15px;
+
+      &.error {
+         background-color: #ff000020;
+         border: 1px solid #ff000070;
+         color: #ff0000;
+      }
+      &.success {
+         background-color: #00ff3770;
+         border: 1px solid #00ff3780;
+         color: #0022009a;
+      }
+   }
+   &Button {
+      border: 0;
+      background-color: #ff000002;
+      font-size: 1.25rem;
+      width: 10px;
+      height: 23px;
+      cursor: pointer;
+   }
+}
