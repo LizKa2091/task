@@ -1,0 +1,25 @@
+.header {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #01ACAC;
+   gap: 50px;
+   padding: 25px 50px;
+}
+.title {
+   color: #004141;
+}
+.list {
+   display: flex;
+   gap: 25px;
+
+   &Item {
+      display: inline-block;
+
+      &Link {
+         font-weight: 700;
+         color: #004141;
+         text-decoration: none;
+      }
+   }
+}
