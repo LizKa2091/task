@@ -4,3 +4,5 @@ export interface IToDoItem {
    title: string;
    completed: boolean;
 }
+
+export type messageTypes = 'success' | 'error';
