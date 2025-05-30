@@ -14,7 +14,7 @@ const ToDoItem: FC<IToDoItemProps> = ({ data }) => {
    const { mutate: deleteToDo } = useDeleteToDo();
    const { setMessage, setMessageType } = useSnackbar();
 
-   const handleDeleteTask = () => {
+   const handleDeleteTask = (): void => {
       deleteToDo(data.id, {
          onSuccess: () => {
             setMessage('задача успешно удалена');

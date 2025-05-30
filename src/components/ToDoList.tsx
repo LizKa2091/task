@@ -3,20 +3,27 @@ import { useToDoItems } from '../hooks/useToDoItems';
 import { IToDoItem } from '../types';
 import ToDoItem from './ToDoItem';
 import styles from './ToDoList.module.scss';
+import { useSnackbar } from '../context/SnackbarContext';
 
 const ToDoList: FC = () => {
-   const { data, isError } = useToDoItems();
+   const { data, isLoading, isError } = useToDoItems();
+   const { setMessage, setMessageType } = useSnackbar();
+
+   if (isLoading) {
+      return <span>Загрузка...</span>
+   }
 
    if (isError) {
-      return <span>произошла ошибка</span>;
+      setMessage('произошла ошибка при загрузке задач');
+      setMessageType('error');
+      return <span>Произошла ошибка</span>;
    }
 
    if (!data || data?.length === 0) {
-      return <span>у вас ещё нет задач, добавьте новую задачу</span>
+      return <span>У вас ещё нет задач, добавьте новую задачу</span>
    }
    return (
-      <div>
-         <h1>Список ваших задач</h1>
+      <>
          <ul className={styles.list}>
             {data?.length && data?.length > 0 &&
                data.map((toDo: IToDoItem) => (
@@ -24,7 +31,7 @@ const ToDoList: FC = () => {
                ))
             }
          </ul>
-      </div>
+      </>
    )
 }
 
